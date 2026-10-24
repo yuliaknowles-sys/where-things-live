@@ -763,7 +763,7 @@ const extraInventory=[
     "unit": "kits",
     "location": "Main house → Family room → Desk cabinet → Drawer TEEN",
     "owner": "Nanny / Family Assistant",
-    "tags": "kids child children teen toddler baby family activities teen activity and charging kits",
+    "tags": "kids child children teen toddler baby family activities teen activity and charging kits phone charger power bank",
     "standard": "Check completeness, current sizes and age suitability with the nanny. Clean before storage and keep small parts away from younger children.",
     "image": "estate-est-059"
   },
@@ -1673,7 +1673,7 @@ const extraInventory=[
     "unit": "chargers",
     "location": "Main house → Staff office → Tech cabinet → Drawer C",
     "owner": "Personal Assistant / IT support",
-    "tags": "technology & office devices & accessories devices & accessories laptop chargers",
+    "tags": "technology & office devices & accessories devices & accessories laptop chargers computer macbook laptop charger power adapter",
     "standard": "Return clean, complete and dry. Keep the storage label visible; flag damage or missing pieces before returning to stock.",
     "image": "estate-est-129"
   },
@@ -1686,7 +1686,7 @@ const extraInventory=[
     "unit": "cables",
     "location": "Main house → Staff office → Tech cabinet → Drawer USB",
     "owner": "Personal Assistant / IT support",
-    "tags": "technology & office devices & accessories devices & accessories usb-c cables",
+    "tags": "technology & office devices & accessories devices & accessories usb-c cables phone iphone charger charging cable cord usb",
     "standard": "Return clean, complete and dry. Keep the storage label visible; flag damage or missing pieces before returning to stock.",
     "image": "estate-est-130"
   },
@@ -1699,7 +1699,7 @@ const extraInventory=[
     "unit": "stations",
     "location": "Main house → Staff office → Tech cabinet → Shelf G",
     "owner": "Personal Assistant / IT support",
-    "tags": "technology & office devices & accessories devices & accessories guest charging stations",
+    "tags": "technology & office devices & accessories devices & accessories guest charging stations phone phones iphone android mobile cell charger chargers phone chargers cable cables cord dock charging station",
     "standard": "Return clean, complete and dry. Keep the storage label visible; flag damage or missing pieces before returning to stock.",
     "image": "estate-est-131"
   },

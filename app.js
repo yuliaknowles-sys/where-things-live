@@ -45,6 +45,8 @@ const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const locationFor=x=>locations[x.id]||x.location;
 const normalize=s=>String(s).toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9]+/g,' ').trim();
+const stem=w=>w.length>4?w.replace(/ies$/,'y').replace(/(ing|ers|er|es|s)$/,''):w;
+const termMatch=(text,w)=>text.includes(w)||text.includes(stem(w));
 function resetDirectory(){activeCollection='all';activeZone='All items';selectedHoliday='';visibleLimit=12;$('#search').value='';render()}
 function chooseCollection(id){activeCollection=id;activeZone='All items';selectedHoliday='';visibleLimit=12;$('#search').value='';render()}
 function collectionForZone(z){return collections.find(c=>c.zones.includes(z))}
@@ -55,7 +57,7 @@ function render(){
  const collection=collections.find(c=>c.id===activeCollection);
  const overview=!q&&activeCollection==='all';
  const holidayOverview=!q&&activeCollection==='seasonal'&&!selectedHoliday;
- let list=data.filter(x=>(q||!collection||collection.zones.includes(x.zone))&&(q||activeZone==='All items'||x.zone===activeZone)&&(q||!selectedHoliday||x.group===selectedHoliday)&&(!terms.length||terms.every(w=>normalize(x.name+' '+x.tags+' '+x.zone+' '+(x.group||'')+' '+locationFor(x)).includes(w))));
+ let list=data.filter(x=>(q||!collection||collection.zones.includes(x.zone))&&(q||activeZone==='All items'||x.zone===activeZone)&&(q||!selectedHoliday||x.group===selectedHoliday)&&(!terms.length||terms.every(w=>termMatch(normalize(x.name+' '+x.tags+' '+x.zone+' '+(x.group||'')+' '+locationFor(x)),w))));
  if($('#sort').value==='name')list.sort((a,b)=>a.name.localeCompare(b.name));
  $('#record-count').textContent=currentPage==='directory'?(overview?`6 collections · ${data.length} sample records`:holidayOverview?`7 holidays · ${list.length} items`:`${list.length} items found`):`${zones.length-1} household zones`;
  if(currentPage==='directory'){
